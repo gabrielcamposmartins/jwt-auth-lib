@@ -1,15 +1,10 @@
 # Adicionar ao build.gradle do serviço
 
 repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/gabrielcamposmartins/jwt-auth-lib")
-        credentials {
-            username = 'gabrielcamposmartins'
-            password = 'SEU_TOKEN_GITHUB'
-        }
-    }
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    implementation 'gabrielcamposmartins:jwt-security-lib:1.0.0'
+    implementation 'com.github.gabrielcamposmartins:jwt-auth-lib:latest'
 }

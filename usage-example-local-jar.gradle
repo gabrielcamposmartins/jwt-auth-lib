@@ -1,0 +1,38 @@
+// Method 1: Using local JAR file (RECOMMENDED for now)
+// 1. Download jwt-security-lib-1.0.0.jar from:
+//    https://github.com/gabrielcamposmartins/jwt-auth-lib/releases/download/latest/jwt-security-lib-1.0.0.jar
+// 2. Create a 'libs' folder in your project root
+// 3. Place the downloaded JAR in the libs folder
+// 4. Add this to your build.gradle:
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files('libs/jwt-security-lib-1.0.0.jar')
+
+    // You'll also need to add the transitive dependencies manually:
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.2.0'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+    // ... your other dependencies
+}
+
+// Alternative Method 2: Using flatDir (if you prefer)
+/*
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation name: 'jwt-security-lib', version: '1.0.0'
+    // Add the same transitive dependencies as above
+}
+*/

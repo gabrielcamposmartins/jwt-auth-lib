@@ -1,0 +1,18 @@
+// Add this to your build.gradle file
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/gabrielcamposmartins/jwt-auth-lib")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+            password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+        }
+    }
+}
+
+dependencies {
+    implementation 'gabs:jwt-security-lib:1.0.0'
+    // ... other dependencies
+}
