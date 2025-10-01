@@ -9,3 +9,7 @@ repositories {
         }
     }
 }
+
+dependencies {
+    implementation 'gabrielcamposmartins:jwt-security-lib:1.0.0'
+}
